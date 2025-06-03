@@ -13,11 +13,10 @@ class PassTest {
     @ParameterizedTest(name = "{index} - Update pass quality for sellIn: {0} and quality: {1}, expectedQuality: {2}")
     @MethodSource("provideArgsForPassTests")
     void shouldUpdatePassQuality(int sellIn, int quality, int expectedQuality) {
-        Item[] items = {new Item("Backstage passes to a TAFKAL80ETC concert", sellIn, quality)};
-        GildedRose app = new GildedRose(items);
-        app.updateQuality();
-        assertEquals(sellIn - 1, app.items[0].sellIn);
-        assertEquals(expectedQuality, app.items[0].quality);
+        Pass wrapper = new Pass(new Item("Backstage passes to a TAFKAL80ETC concert", sellIn, quality));
+        wrapper.updateQuality();
+        assertEquals(sellIn - 1, wrapper.item.sellIn);
+        assertEquals(expectedQuality, wrapper.item.quality);
     }
 
     private static Stream<Arguments> provideArgsForPassTests() {

@@ -8,19 +8,17 @@ class SulfurasTest {
 
     @Test
     void shouldNotUpdateQualityOfSulfuras() {
-        Item[] items = {new Item("Sulfuras, Hand of Ragnaros", 10, 5)};
-        GildedRose app = new GildedRose(items);
-        app.updateQuality();
-        assertEquals(10, app.items[0].sellIn);
-        assertEquals(5, app.items[0].quality);
+        Sulfuras wrapper = new Sulfuras(new Item("Sulfuras, Hand of Ragnaros", 10, 5));
+        wrapper.updateQuality();
+        assertEquals(10, wrapper.item.sellIn);
+        assertEquals(5, wrapper.item.quality);
     }
 
     @Test
     void shouldNotUpdateQualityOfSulfuras_afterLastDay() {
-        Item[] items = {new Item("Sulfuras, Hand of Ragnaros", 0, 10)};
-        GildedRose app = new GildedRose(items);
-        app.updateQuality();
-        assertEquals(0, app.items[0].sellIn);
-        assertEquals(10, app.items[0].quality);
+        Sulfuras wrapper = new Sulfuras(new Item("Sulfuras, Hand of Ragnaros", 0, 10));
+        wrapper.updateQuality();
+        assertEquals(0, wrapper.item.sellIn);
+        assertEquals(10, wrapper.item.quality);
     }
 }
