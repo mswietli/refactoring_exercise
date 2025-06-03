@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 
 class ItemWrapperFactoryTest {
 
-    @ParameterizedTest(name = "{index} - Update pass quality for sellIn: {0} and quality: {1}, expectedQuality: {2}")
+    @ParameterizedTest()
     @MethodSource("provideArgsForTests")
     public void shouldCreateWrappersProperly(Item item, Class<ItemWrapper> expectedClass) {
         assertInstanceOf(expectedClass, ItemWrapperFactory.wrapItem(item));
