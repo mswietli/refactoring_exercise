@@ -21,7 +21,7 @@ class ItemWrapperFactoryTest {
             Arguments.of(new Item("Normal Item", 10, 20), NormalItem.class),
             Arguments.of(new Item("Aged Brie", 5, 30), AgedBrie.class),
             Arguments.of(new Item("Sulfuras, Hand of Ragnaros", 0, 80), Sulfuras.class),
-            Arguments.of(new Item("Backstage passes to a TAFKAL80ETC concert", 15, 40), Pass.class),
+            Arguments.of(new Item("Backstage passes to a TAFKAL80ETC concert", 15, 40), BackstagePass.class),
             Arguments.of(new Item("Conjured", 3, 6), Conjured.class)
         );
     }
