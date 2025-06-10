@@ -30,4 +30,12 @@ class NormalItemTest {
         assertEquals(4, wrapper.item.sellIn);
         assertEquals(0, wrapper.item.quality);
     }
+
+    @Test
+    void shouldNotUpdateNormalItem_toNegative_afterLastDay() {
+        NormalItem wrapper = new NormalItem(new Item("foo", 0, 0));
+        wrapper.updateQuality();
+        assertEquals(-1, wrapper.item.sellIn);
+        assertEquals(0, wrapper.item.quality);
+    }
 }

@@ -29,4 +29,12 @@ class ConjuredTest {
         assertEquals(4, wrapper.item.sellIn);
         assertEquals(0, wrapper.item.quality);
     }
+
+    @Test
+    void shouldUpdateConjuredItem_to0() {
+        Conjured wrapper = new Conjured(new Item("Conjured", 0, 3));
+        wrapper.updateQuality();
+        assertEquals(-1, wrapper.item.sellIn);
+        assertEquals(0, wrapper.item.quality);
+    }
 }
